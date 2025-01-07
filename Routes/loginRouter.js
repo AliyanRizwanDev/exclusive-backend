@@ -1,9 +1,8 @@
-import {Router} from 'express'
+import { Router } from "express";
 
+const loginRouter = Router();
 
-const loginRouter = Router()
+//This is a route
+// loginRouter.get("/login", loginController);
 
-// loginRouter.get("/login", loginController)
-
-export default loginRouter
-
+export default loginRouter;
