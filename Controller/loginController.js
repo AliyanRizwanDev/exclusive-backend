@@ -1,20 +1,21 @@
-import { signUp } from "../Models/userAuthenticationSchema.js";
+import { user } from "../Models/userAuthentication.js";
 
 export const postLogin = async (req, res) => {
   try {
-    const user = await signUp.findOne({
+    const findUser = await user.findOne({
       email_phone: req.body.email_phone,
       password: req.body.password,
     });
 
-    if (!user) {
+    if (!findUser) {
       res.status(404).json({
         message: "invaild login credentials",
       });
     }
 
     res.status(200).json({
-      message: `You have successfully logged in, Welcome ${user.name}`,
+      message: `You have successfully logged in, Welcome ${findUser.name}`,
+      id: findUser._id
     });
   } catch (error) {
     res.status(500).json({
