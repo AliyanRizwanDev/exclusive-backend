@@ -1,0 +1,23 @@
+[33mcommit e54535b9e7a740734d96d243e54ef877273b338a[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mcategories[m[33m, [m[1;31morigin/user-authentication[m[33m, [m[1;32muser-authentication[m[33m)[m
+Author: Ehtisham Aslam <ehtisham.ea10@gmail.com>
+Date:   Wed Jan 8 06:47:44 2025 -0800
+
+    user authentication completed
+
+[33mcommit c68cf8237dc872e94ce0e72bd52d059a9670421c[m[33m ([m[1;31morigin/login-controller[m[33m)[m
+Author: Ehtisham Aslam <ehtisham.ea10@gmail.com>
+Date:   Tue Jan 7 06:20:28 2025 -0800
+
+    Remove a comment
+
+[33mcommit 3f8e7ee776b9447795ec572fcdc7744df0bc0792[m
+Author: Ehtisham Aslam <ehtisham.ea10@gmail.com>
+Date:   Tue Jan 7 06:18:42 2025 -0800
+
+    Added a comment
+
+[33mcommit 6ce8bed1eb9b24131bafc2b0f9061a362315e682[m[33m ([m[1;31morigin/master[m[33m, [m[1;32mmaster[m[33m)[m
+Author: Ehtisham Aslam <ehtisham.ea10@gmail.com>
+Date:   Tue Jan 7 06:09:14 2025 -0800
+
+    Started Backend

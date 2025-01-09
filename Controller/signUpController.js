@@ -1,26 +1,40 @@
-import { signUp } from "../Models/userAuthenticationSchema.js";
+import { user } from "../Models/userAuthentication.js";
 
-export const postSignUp = async (req, res) => {
-  const kitty = new signUp({
-    name: req.body.name,
-    email_phone: req.body.email_phone,
-    password: req.body.password,
-  });
+export const postUser = async (req, res) => {
+  const { name, email_phone, password } = req.body;
+
+  if (!name || !email_phone || !password) {
+    return res.status(400).json({ message: "All fields are required." });
+  }
 
   try {
-    await kitty.save();
+    const existingUser = await user.findOne({ email_phone });
+    if (existingUser) {
+      return res
+        .status(400)
+        .json({ message: "Email or phone number already exists." });
+    }
+
+    const newUser = new user({ name, email_phone, password });
+    await newUser.save();
+    console.log(newUser)
 
     res.status(200).json({
-      message: `you have successfully signed up`,
+      message: "You have successfully signed up.",
       loginDetails: {
-        name: req.body.name,
-        password: req.body.password,
+        name,
+        password,
       },
+      id: newUser._id
     });
-  } catch (error) {
+  } 
+ 
+  catch (error) {
     res.status(500).json({
-      message: "error signing up",
+      message: "Error signing up",
       error: error.message,
     });
   }
 };
+
+
